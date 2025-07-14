@@ -1,0 +1,9 @@
+/node_modules
+/src
+
+.env
+*.test.ts
+test/
+
+jest.config.js
+tsconfig.json

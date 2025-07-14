@@ -1,0 +1,36 @@
+{
+  "name": "sarafa-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for Sarafa API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "keywords": [
+    "sarafa",
+    "api",
+    "sdk",
+    "typescript",
+    "mobile-money",
+    "payments"
+  ],
+  "author": "Mabior Duom",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mde3/sarafa-sdk"
+  },
+  "homepage": "https://readme.sarafa.ss/api-reference/introduction"
+}
