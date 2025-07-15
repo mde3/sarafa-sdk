@@ -1,49 +1,58 @@
 export interface ChargeRequest {
   amount: number;
-  currency: string;
-  customer: {
-    email: string;
-    phone?: string;
-    name?: string;
-  };
-  description?: string;
-  reference?: string;
+  currency: 'SSP' | 'UGX';
+  external_id: string;
+  phone: string;
+  only_fees: false;
+  callback_url: string;
 }
 
 export interface ChargeResponse {
-  status: string;
-  transaction_id: string;
-  amount: number;
-  currency: string;
-  created_at: string;
-  message?: string;
+  status: boolean;
+  message: string;
+  data: {
+    id: string;
+    amount: number;
+    currency: 'SSP' | 'UGX',
+    status: 'completed' | 'pending' | 'failed'
+    created_at: string
+  }
 }
 
 export interface TransferRequest {
   amount: number;
-  currency: string;
-  recipient: {
-    account_number: string;
-    bank_code: string;
+  currency: 'SSP' | 'UGX';
+  external_id: string;
+  customer: {
+    first_name: string;
+    last_name: string;
+    phone: string
   };
-  description?: string;
-  reference?: string;
+  only_fees: boolean;
+  callback_url: string
 }
 
 export interface TransferResponse {
-  status: string;
-  transfer_id: string;
-  amount: number;
-  currency: string;
-  created_at: string;
-  message?: string;
+  status: boolean;
+  message: string;
+  data: {
+    id: string;
+    amount: number;
+    currency: 'SSP' | 'UGX',
+    status: 'completed' | 'pending' | 'failed'
+    created_at: string
+  }
 }
 
 export interface ProfileResponse {
-  user_id: string;
-  email: string;
-  name?: string;
-  phone?: string;
-  created_at: string;
-  status: string;
+  status: boolean;
+  message: string;
+  data: {
+    name: string;
+    logo: string;
+    sector: string;
+    isVerified: boolean;
+    account_no: string;
+    createdAt: string
+  }
 }

@@ -19,22 +19,27 @@ async function example() {
   try {
     // Charge example
     const charge = await sdk.charge({
-      amount: 1000,
-      currency: "USD",
-      customer: {
-        email: "user@example.com",
-      },
+      amount: 100,
+      currency: 'SSP',
+      external_id: '123123',
+      phone: '+211922123123'
+      only_fees: false;
+      callback_url: 'https://webhook.site/'
     });
     console.log("Charge:", charge);
 
     // Transfer example
     const transfer = await sdk.transfer({
-      amount: 500,
-      currency: "USD",
-      recipient: {
-        account_number: "1234567890",
-        bank_code: "BANK001",
-      },
+      amount: 100,
+      currency: 'SSP',
+      external_id: '123123',
+      customer: {
+        first_name: 'John',
+        last_name: 'Doe',
+        phone: '+211922123123'
+      };
+      only_fees: false,
+      callback_url: 'https://webhook.site/'
     });
     console.log("Transfer:", transfer);
 

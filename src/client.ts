@@ -10,13 +10,13 @@ import {
 
 export class SarafaClient {
   private api: AxiosInstance;
-  private baseUrl: string = "https://api.sarafa.ss";
+  private baseUrl: string = "https://api.sarafa.ss/business";
 
   constructor(apiKey: string) {
     this.api = axios.create({
       baseURL: this.baseUrl,
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        'api-key': `${apiKey}`,
         "Content-Type": "application/json",
       },
     });
