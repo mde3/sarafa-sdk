@@ -1,6 +1,6 @@
 export interface ChargeRequest {
   amount: number;
-  currency: 'SSP' | 'UGX';
+  currency: "SSP" | "UGX";
   external_id: string;
   phone: string;
   only_fees: false;
@@ -11,37 +11,37 @@ export interface ChargeResponse {
   status: boolean;
   message: string;
   data: {
-    id: string;
+    tx_id: string;
     amount: number;
-    currency: 'SSP' | 'UGX',
-    status: 'completed' | 'pending' | 'failed'
-    created_at: string
-  }
+    currency: "SSP" | "UGX";
+    status: "completed" | "pending" | "failed";
+    created_at: string;
+  };
 }
 
 export interface TransferRequest {
   amount: number;
-  currency: 'SSP' | 'UGX';
+  currency: "SSP" | "UGX";
   external_id: string;
   customer: {
     first_name: string;
     last_name: string;
-    phone: string
+    phone: string;
   };
   only_fees: boolean;
-  callback_url: string
+  callback_url: string;
 }
 
 export interface TransferResponse {
   status: boolean;
   message: string;
   data: {
-    id: string;
+    tx_id: string;
     amount: number;
-    currency: 'SSP' | 'UGX',
-    status: 'completed' | 'pending' | 'failed'
-    created_at: string
-  }
+    currency: "SSP" | "UGX";
+    status: "completed" | "pending" | "failed";
+    created_at: string;
+  };
 }
 
 export interface ProfileResponse {
@@ -53,6 +53,6 @@ export interface ProfileResponse {
     sector: string;
     isVerified: boolean;
     account_no: string;
-    createdAt: string
-  }
+    createdAt: string;
+  };
 }

@@ -1,4 +1,3 @@
-// src/sarafa-sdk.ts
 import axios, { AxiosInstance } from "axios";
 import {
   ChargeRequest,
@@ -8,7 +7,7 @@ import {
   ProfileResponse,
 } from "./types";
 
-export class SarafaClient {
+export class SarafaSDK {
   private api: AxiosInstance;
   private baseUrl: string = "https://api.sarafa.ss/business";
 
@@ -16,7 +15,7 @@ export class SarafaClient {
     this.api = axios.create({
       baseURL: this.baseUrl,
       headers: {
-        'api-key': `${apiKey}`,
+        "api-key": `${apiKey}`,
         "Content-Type": "application/json",
       },
     });
